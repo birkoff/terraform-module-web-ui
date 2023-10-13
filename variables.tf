@@ -1,4 +1,6 @@
 variable "hosted_zone_name" {}
+variable "hosted_zone_id" {}
+
 
 variable "bucket_region" {
   description = "Region of the S3 bucket"
@@ -17,22 +19,18 @@ variable "comment" {
   default = ""
 }
 
-variable "create_logs_bucket" {
-  type    = bool
-  default = true
-}
 
 variable "frontend_subdomain_aliases" {
   type    = list(string)
   default = []
 }
 
-variable "logs_bucket" {
-  type    = string
-  default = ""
-}
+#variable "logs_bucket" {
+#  type    = string
+#  default = ""
+#}
 
-variable "logs_prefix" {
+variable "acm_certificate_arn" {
   type    = string
   default = ""
 }
