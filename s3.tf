@@ -1,6 +1,6 @@
 module "s3_frontend_files" {
   source                  = "git::https://github.com/terraform-aws-modules/terraform-aws-s3-bucket.git//?ref=v3.6.1"
-  bucket                  = "${element(var.frontend_subdomain_aliases, 0)}.${var.hosted_zone_name}"
+  bucket                  = trimprefix(".", "${element(var.frontend_subdomain_aliases, 0)}.${var.hosted_zone_name}")
   block_public_acls       = "true"
   block_public_policy     = "true"
   ignore_public_acls      = "true"
