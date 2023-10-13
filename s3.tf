@@ -8,7 +8,7 @@ module "s3_frontend_files" {
   attach_policy           = "true"
   website = {
     index_document = "index.html"
-    error_document = "error.html"
+    error_document = "index.html"
   }
   policy = jsonencode(
     {
