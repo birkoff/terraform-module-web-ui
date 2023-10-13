@@ -64,7 +64,7 @@ resource "aws_cloudfront_distribution" "this" {
   retain_on_delete = "false"
 
   viewer_certificate {
-    acm_certificate_arn            = data.aws_acm_certificate.this.arn
+    acm_certificate_arn            = var.acm_certificate_arn
     cloudfront_default_certificate = "false"
     minimum_protocol_version       = "TLSv1.2_2018"
     ssl_support_method             = "sni-only"
