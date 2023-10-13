@@ -69,10 +69,4 @@ resource "aws_cloudfront_distribution" "this" {
     minimum_protocol_version       = "TLSv1.2_2018"
     ssl_support_method             = "sni-only"
   }
-
-  logging_config {
-    include_cookies = false
-    bucket          = "${var.logs_bucket}.s3.amazonaws.com"
-    prefix          = var.logs_prefix
-  }
 }
