@@ -17,7 +17,7 @@ module "s3_frontend_files" {
         {
           Effect : "Allow",
           Principal : {
-            "AWS" : ["*"]
+            "AWS" : ["${aws_cloudfront_origin_access_identity.this.iam_arn}"]
           },
           Action : [
             "s3:GetObject",
