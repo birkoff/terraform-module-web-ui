@@ -10,6 +10,10 @@ output "alias_fqdns" {
   }
 }
 
+output "this_is_also_valid_because_it_has_the_correct_value" {
+  description = "The name of the s3 bucket"
+  value       = module.s3_frontend_files.s3_bucket_id
+}
 
 output "s3_bucket_name" {
   description = "The name of the s3 bucket"
